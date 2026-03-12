@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="popup.css" />
+  <title>SupaCanvas</title>
+</head>
+<body>
+  <div class="container">
+    <h1>SupaCanvas</h1>
+    <p class="subtitle">Canvas LMS Token Generator</p>
+
+    <div id="not-canvas" class="warning" hidden>
+      Navigate to <strong>courses.iwu.edu</strong> and log in before using this extension.
+    </div>
+
+    <div id="form-section">
+      <label class="field">
+        <span class="label-text">Purpose</span>
+        <input type="text" id="purpose" placeholder="e.g. API Testing" value="Testing" />
+      </label>
+
+      <label class="field">
+        <span class="label-text">Expires at</span>
+        <input type="datetime-local" id="expires-at" />
+      </label>
+
+      <p class="hint" id="hint-text"></p>
+
+      <button id="btn-generate">Generate Token</button>
+    </div>
+
+    <div id="result-section" hidden>
+      <div class="card">
+        <span class="label-text">Access Token</span>
+        <div class="token-row">
+          <code id="token-value" class="token-value"></code>
+          <button id="btn-copy" class="btn-icon" title="Copy token">&#x2398;</button>
+        </div>
+      </div>
+      <div class="card">
+        <span class="label-text">Details</span>
+        <pre id="token-details" class="details"></pre>
+      </div>
+    </div>
+
+    <div id="error-section" hidden>
+      <div class="card card-error">
+        <span class="label-text">Error</span>
+        <pre id="error-message" class="details error-text"></pre>
+      </div>
+    </div>
+
+    <p id="status" class="status"></p>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
